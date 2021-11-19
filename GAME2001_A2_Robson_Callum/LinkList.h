@@ -46,6 +46,11 @@ public:
 		return(m_node == node);
 	}
 
+	bool isValid()
+	{
+		return (m_node != NULL);
+	}
+
 private:
 	LinkNode<T>* m_node;
 };
@@ -67,7 +72,7 @@ public:
 	}
 
 	Return first node in list;
-	LinkNode<T>* Front()
+	LinkNode<T>* Begin()
 	{
 		assert(m_root != NULL);
 		return m_root;
@@ -89,7 +94,7 @@ public:
 	}
 
 	//Pop first node in list
-	void Pop()
+	void PopFront()
 	{
 		assert(M - root != NULL);
 
@@ -106,7 +111,7 @@ public:
 	}
 
 	// inserts a node before the node currently pointed to by the iterator passed in, set's the new node's data to what is passed in
-	void Push(LinkIterator<T>& it, T newData)
+	void InsertBefore(LinkIterator<T>& it, T newData)
 	{
 		assert(it.m_node != NULL);
 
@@ -149,7 +154,7 @@ class LinkNode
 	friend class LinkIterator<T>;
 	friend class LinkList<T>;
 
-	LinkNode() : m_priority(0), m_root(0), m_lastNode(0)
+	LinkNode() : m_priority(0), m_root(0), m_next(0), m_previous(0);
 	{
 	}
 
@@ -157,4 +162,5 @@ private:
 	T m_data;
 	int m_priority;
 	LinkNode* m_next;
+	LinkNode* m_previous;
 };
