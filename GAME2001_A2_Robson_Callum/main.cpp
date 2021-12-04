@@ -3,36 +3,24 @@ using namespace std;
 
 int main()
 {
-	PriorityQueue <char> JohndeLancie(6);
+	PriorityQueue <char> JohndeLancie(5);
 
-	JohndeLancie.push('G', 4);
-	JohndeLancie.push('J', 1);
+	JohndeLancie.push('L', 4);
+	JohndeLancie.push('P', 1);
 	JohndeLancie.push('D', 3);
-	JohndeLancie.push('W', 2);
+	JohndeLancie.push('R', 2);
 	JohndeLancie.push('W', 5);
 
 	int loopCount = JohndeLancie.GetSize();
 
 	for (int i = 0; i < loopCount; i++)
 	{
-		cout << "Item #" << i + 1 << endl;
+		cout << "Current item at front of queue:" << endl;
 		cout << "Data: " << JohndeLancie.Front()->getData() << endl;
-		cout << "Priority: " << JohndeLancie.Front()->m_priority << endl << endl;
+		cout << "Priority: " << JohndeLancie.Front()->m_priority << endl;
 		JohndeLancie.Pop();
+		cout << "Removing item at front of queue..." << endl << endl;
 	}
-
-	cout << "Data: " << JohndeLancie.Front()->getData() << endl;
-
-	/*cout << JohndeLancie.Front()->getData() << endl;
-	cout << JohndeLancie.Front()->m_priority << endl;
-	cout << JohndeLancie.Front()->m_next->getData() << endl;
-	cout << JohndeLancie.Front()->m_next->m_priority << endl;
-	cout << JohndeLancie.Front()->m_next->m_next->getData() << endl;
-	cout << JohndeLancie.Front()->m_next->m_next->m_priority << endl;
-	cout << JohndeLancie.Front()->m_next->m_next->m_next->getData() << endl;
-	cout << JohndeLancie.Front()->m_next->m_next->m_next->m_priority << endl;
-	cout << JohndeLancie.Front()->m_next->m_next->m_next->m_next->getData() << endl;
-	cout << JohndeLancie.Front()->m_next->m_next->m_next->m_next->m_priority << endl;*/
 
 	return 0;
 };
